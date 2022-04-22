@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      setTimeout(() => {
+        document.write(
+          "You seem to be offline... The application will connect automatically when the internet connection is restored."
+        );
+      }, 5000);
+      function sendOnline() {
+        electron.ipcRenderer.send("connetion_online");
+      }
+      if (navigator.onLine) {
+        sendOnline();
+      }
+      window.addEventListener("online", sendOnline);
+    </script>
+  </body>
+</html>

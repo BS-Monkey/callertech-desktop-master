@@ -1,0 +1,5 @@
+node_modules/
+**-lock.json
+release-builds/
+*.DS_Store
+public/app.js*
