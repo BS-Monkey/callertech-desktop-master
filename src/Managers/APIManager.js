@@ -42,12 +42,23 @@ class APImanager {
   async login(username, password) {
     let data = {};
     let response;
+    const headers = {
+      'Access-Control-Allow-Origin': '*', 
+      'Access-Control-Allow-Methods': 'POST, GET, OPTIONS', 
+      'Access-Control-Allow-Headers': '*', 
+      'Access-Control-Max-Age': '1728000', 
+      'Content-Type': 'text/plain', 
+    }
+    console.log(headers)
     try {
       ({ data } = await this.axios.post("/subaccount_login", {
         username,
         password,
+      }, {
+        headers: headers
       }));
     } catch (e) {
+      console.log('error', e)
       response = {
         userdata: null,
         error:
