@@ -22,4 +22,4 @@ If you want to compile for staging, run `yarn webapp:staging`
 Increment the version number in `package.json`
 For beta version, run `yarn release:beta`
 For production version, run `yarn release`
-2022.05.03
+2022.05.04
